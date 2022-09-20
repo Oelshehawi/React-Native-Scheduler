@@ -13,6 +13,7 @@ import CustomInput from '../../components/CustomInput';
         <Image source={Logo} style={[styles.logo, {height: height * 0.3}]} resizeMode="contain" />
 
         <CustomInput />
+        <CustomInput />
       </View>
     );
   };
