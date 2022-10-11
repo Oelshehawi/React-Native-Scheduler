@@ -10,11 +10,12 @@ import React from 'react';
 import type {Node} from 'react';
 import {SafeAreaView, StyleSheet, Text} from 'react-native';
 import Login from './src/screens/Login';
+import SignUpScreen from './src/screens/SignUp';
 
 const App: () => Node = () => {
   return (
     <SafeAreaView style={styles.root}>
-      <Login />
+      <SignUpScreen />
     </SafeAreaView>
   );
 };

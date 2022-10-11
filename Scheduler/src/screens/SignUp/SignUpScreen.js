@@ -1,12 +1,12 @@
 /* eslint-disable prettier/prettier */
 import React, {useState} from 'react';
-import {View, StyleSheet, Image, useWindowDimensions, ScrollView} from 'react-native';
+import {View, StyleSheet, Text, useWindowDimensions, ScrollView} from 'react-native';
 import Logo from '../../../assets/images/quilchena_logo.png';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
 
 
-  const Login = () => {
+  const SignUpScreen = () => {
     const {username, setUsername} = useState('');
     const {password, setPassword} = useState('');
 
@@ -33,7 +33,7 @@ import CustomButton from '../../components/CustomButton';
     return (
       <ScrollView showVerticalScrollIndicator={false}>
       <View style={styles.root}>
-        <Image source={Logo} style={[styles.logo, {height: height * 0.3}]} resizeMode="contain" />
+      <Text style={styles.title}>Create an Account </Text>
 
         <CustomInput placeholder="Username" value={username} setValue={setUsername}/>
         <CustomInput placeholder="Password" value={password} setValue={setPassword}  secureTextEntry={true}/>
@@ -59,6 +59,12 @@ const styles = StyleSheet.create({
     maxWidth: 500,
     maxHeight: 200,
   },
+  title: {
+    fontWeight : 'bold',
+    fontSize : 24,
+    color: '#051C60',
+    margin: 10,
+  }
 });
 
-export default Login;
+export default SignUpScreen;
