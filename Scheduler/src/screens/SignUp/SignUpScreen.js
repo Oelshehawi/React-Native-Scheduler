@@ -1,48 +1,60 @@
 /* eslint-disable prettier/prettier */
 import React, {useState} from 'react';
-import {View, StyleSheet, Text, useWindowDimensions, ScrollView} from 'react-native';
-import Logo from '../../../assets/images/quilchena_logo.png';
+import {View, StyleSheet, Text, ScrollView} from 'react-native';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
+import SocialSignInButtons from '../../components/SocialSignInButtons';
 
 
   const SignUpScreen = () => {
     const {username, setUsername} = useState('');
+    const {email, setEmail} = useState('');
     const {password, setPassword} = useState('');
+    const {passwordRepeat, setPasswordRepeat} = useState('');
 
-    const {height} = useWindowDimensions();
 
+    const onRegisterPressed = () => {
+      console.log('onRegister');
+    };
     const onSignInPressed = () => {
-      console.log('Sign in');
-    };
-    const onForgotPasswordPressed = () => {
-      console.log('Forgot');
-    };
-    const onSignInFacebook = () => {
-      console.log('Facebook');
-    };
-    const onSignInGoogle= () => {
-      console.log('google');
-    };
-    const onSignInApple = () => {
-      console.log('apple');
-    };
-    const onSignUpPressed = () => {
       console.log('SignUp');
+    };
+    const onTermsOfUsePressed = () => {
+      console.log('TermsOfUsePressed');
+    };
+    const onPrivacyPressed = () => {
+      console.log('PrivacyPressed');
     };
     return (
       <ScrollView showVerticalScrollIndicator={false}>
       <View style={styles.root}>
       <Text style={styles.title}>Create an Account </Text>
 
-        <CustomInput placeholder="Username" value={username} setValue={setUsername}/>
-        <CustomInput placeholder="Password" value={password} setValue={setPassword}  secureTextEntry={true}/>
-        <CustomButton text = "Sign in" onPress={onSignInPressed}/>
-        <CustomButton text = "Forgot Password?" onPress={onForgotPasswordPressed} type="TERTIARY"/>
-        <CustomButton text = "Sign in with Facebook" onPress={onSignInFacebook} bgColor = "#E7EAF4" fgColor = "#4765A9"/>
-        <CustomButton text = "Sign in with Google" onPress={onSignInGoogle} bgColor = "#FAE9EA" fgColor = "#DD4D44"/>
-        <CustomButton text = "Sign in with Apple" onPress={onSignInApple} bgColor = "#e3e3e3" fgColor = "#363636"/>
-        <CustomButton text = "Don't Have an Account?" onPress={onSignUpPressed} type="TERTIARY"/>
+        <CustomInput
+        placeholder="Username"
+        value={username}
+        setValue={setUsername}/>
+        <CustomInput
+        placeholder="Email"
+        value={email}
+        setValue={setEmail}
+        secureTextEntry={true}/>
+        <CustomInput
+        placeholder="Password"
+        value={password}
+        setValue={setPassword}
+        secureTextEntry={true}/>
+        <CustomInput
+        placeholder="Repeat Password"
+        value={passwordRepeat}
+        setValue={setPasswordRepeat}
+        secureTextEntry={true}/>
+        <CustomButton
+        text = "Register"
+        onPress={onRegisterPressed}/>
+        <Text style={styles.text}> By registering, you confirm that you accept our <Text style={styles.link} onPress={onTermsOfUsePressed}>Terms of Use</Text> and<Text style={styles.link} onPress={onPrivacyPressed}>Privacy Policy</Text> </Text>
+        <SocialSignInButtons />
+        <CustomButton text = "Already Have an Account? Sign in" onPress={onSignInPressed} type="TERTIARY"/>
       </View>
       </ScrollView>
     );
@@ -54,17 +66,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 20,
   },
-  logo: {
-    width: '80%',
-    maxWidth: 500,
-    maxHeight: 200,
+  text: {
+    color: 'gray',
+    marginVertical: 10,
   },
   title: {
     fontWeight : 'bold',
     fontSize : 24,
-    color: '#051C60',
+    color: 'white',
     margin: 10,
-  }
+  },
+  link: {
+    color: '#FDB075',
+  },
 });
 
 export default SignUpScreen;

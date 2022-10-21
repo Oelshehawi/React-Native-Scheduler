@@ -4,6 +4,7 @@ import {View, StyleSheet, Image, useWindowDimensions, ScrollView} from 'react-na
 import Logo from '../../../assets/images/quilchena_logo.png';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
+import SocialSignInButtons from '../../components/SocialSignInButtons';
 
 
   const Login = () => {
@@ -18,15 +19,6 @@ import CustomButton from '../../components/CustomButton';
     const onForgotPasswordPressed = () => {
       console.log('Forgot');
     };
-    const onSignInFacebook = () => {
-      console.log('Facebook');
-    };
-    const onSignInGoogle= () => {
-      console.log('google');
-    };
-    const onSignInApple = () => {
-      console.log('apple');
-    };
     const onSignUpPressed = () => {
       console.log('SignUp');
     };
@@ -39,9 +31,7 @@ import CustomButton from '../../components/CustomButton';
         <CustomInput placeholder="Password" value={password} setValue={setPassword}  secureTextEntry={true}/>
         <CustomButton text = "Sign in" onPress={onSignInPressed}/>
         <CustomButton text = "Forgot Password?" onPress={onForgotPasswordPressed} type="TERTIARY"/>
-        <CustomButton text = "Sign in with Facebook" onPress={onSignInFacebook} bgColor = "#E7EAF4" fgColor = "#4765A9"/>
-        <CustomButton text = "Sign in with Google" onPress={onSignInGoogle} bgColor = "#FAE9EA" fgColor = "#DD4D44"/>
-        <CustomButton text = "Sign in with Apple" onPress={onSignInApple} bgColor = "#e3e3e3" fgColor = "#363636"/>
+        <SocialSignInButtons />
         <CustomButton text = "Don't Have an Account?" onPress={onSignUpPressed} type="TERTIARY"/>
       </View>
       </ScrollView>

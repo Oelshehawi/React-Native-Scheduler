@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
@@ -11,11 +12,14 @@ import type {Node} from 'react';
 import {SafeAreaView, StyleSheet, Text} from 'react-native';
 import Login from './src/screens/Login';
 import SignUpScreen from './src/screens/SignUp';
+import ConfirmEmailScreen from './src/screens/ConfirmEmail';
+import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen';
+import NewPasswordScreen from './src/screens/NewPasswordScreen';
 
 const App: () => Node = () => {
   return (
     <SafeAreaView style={styles.root}>
-      <SignUpScreen />
+      <NewPasswordScreen/>
     </SafeAreaView>
   );
 };
