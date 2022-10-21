@@ -5,22 +5,25 @@ import Logo from '../../../assets/images/quilchena_logo.png';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
 import SocialSignInButtons from '../../components/SocialSignInButtons';
-
+import { useNavigation} from '@react-navigation/native';
 
   const Login = () => {
     const {username, setUsername} = useState('');
     const {password, setPassword} = useState('');
 
     const {height} = useWindowDimensions();
+    const navigation = useNavigation();
 
     const onSignInPressed = () => {
-      console.log('Sign in');
+      //validate user
+
+      navigation.navigate('HomeScreen');
     };
     const onForgotPasswordPressed = () => {
-      console.log('Forgot');
+      navigation.navigate('ForgotPasswordScreen');
     };
     const onSignUpPressed = () => {
-      console.log('SignUp');
+      navigation.navigate('SignUpScreen');
     };
     return (
       <ScrollView showVerticalScrollIndicator={false}>

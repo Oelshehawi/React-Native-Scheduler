@@ -8,18 +8,15 @@
  */
 
 import React from 'react';
-import type {Node} from 'react';
 import {SafeAreaView, StyleSheet, Text} from 'react-native';
-import Login from './src/screens/Login';
-import SignUpScreen from './src/screens/SignUp';
-import ConfirmEmailScreen from './src/screens/ConfirmEmail';
-import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen';
-import NewPasswordScreen from './src/screens/NewPasswordScreen';
+import Navigation from './src/navigation';
 
-const App: () => Node = () => {
+
+
+const App = () => {
   return (
     <SafeAreaView style={styles.root}>
-      <NewPasswordScreen/>
+      <Navigation/>
     </SafeAreaView>
   );
 };

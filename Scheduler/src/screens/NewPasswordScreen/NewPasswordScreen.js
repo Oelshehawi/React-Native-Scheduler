@@ -3,18 +3,18 @@ import React, {useState} from 'react';
 import {View, StyleSheet, Text, ScrollView} from 'react-native';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
-
+import { useNavigation} from '@react-navigation/native';
 
   const NewPasswordScreen = () => {
     const {code, setCode} = useState('');
     const {newPassword, setNewPassword} = useState('');
-
+    const navigation = useNavigation()
 
     const onSubmitPressed = () => {
-      console.log('onSubmit');
+      navigation.navigate('HomeScreen')
     };
     const onSignInPressed = () => {
-      console.log('onSignIn');
+      navigation.navigate('Login')
     };
     return (
       <ScrollView showVerticalScrollIndicator={false}>

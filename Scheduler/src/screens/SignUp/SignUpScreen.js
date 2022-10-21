@@ -4,6 +4,7 @@ import {View, StyleSheet, Text, ScrollView} from 'react-native';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
 import SocialSignInButtons from '../../components/SocialSignInButtons';
+import { useNavigation} from '@react-navigation/native';
 
 
   const SignUpScreen = () => {
@@ -11,13 +12,13 @@ import SocialSignInButtons from '../../components/SocialSignInButtons';
     const {email, setEmail} = useState('');
     const {password, setPassword} = useState('');
     const {passwordRepeat, setPasswordRepeat} = useState('');
-
+    const navigation = useNavigation();
 
     const onRegisterPressed = () => {
-      console.log('onRegister');
+      navigation.navigate('ConfirmEmailScreen')
     };
     const onSignInPressed = () => {
-      console.log('SignUp');
+      navigation.navigate('Login');
     };
     const onTermsOfUsePressed = () => {
       console.log('TermsOfUsePressed');
@@ -52,7 +53,7 @@ import SocialSignInButtons from '../../components/SocialSignInButtons';
         <CustomButton
         text = "Register"
         onPress={onRegisterPressed}/>
-        <Text style={styles.text}> By registering, you confirm that you accept our <Text style={styles.link} onPress={onTermsOfUsePressed}>Terms of Use</Text> and<Text style={styles.link} onPress={onPrivacyPressed}>Privacy Policy</Text> </Text>
+        <Text style={styles.text}> By registering, you confirm that you accept our <Text style={styles.link} onPress={onTermsOfUsePressed}>Terms of Use</Text> and {' '}<Text style={styles.link} onPress={onPrivacyPressed}>Privacy Policy</Text> </Text>
         <SocialSignInButtons />
         <CustomButton text = "Already Have an Account? Sign in" onPress={onSignInPressed} type="TERTIARY"/>
       </View>
