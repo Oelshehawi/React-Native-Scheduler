@@ -4,13 +4,14 @@ import {View, StyleSheet, Text, ScrollView} from 'react-native';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
 import { useNavigation} from '@react-navigation/native';
+import {useForm} from 'react-hook-form'
 
   const NewPasswordScreen = () => {
-    const {code, setCode} = useState('');
-    const {newPassword, setNewPassword} = useState('');
     const navigation = useNavigation()
 
-    const onSubmitPressed = () => {
+    const {control,handleSubmit} = useForm();
+
+    const onSubmitPressed = (data) => {
       navigation.navigate('HomeScreen')
     };
     const onSignInPressed = () => {
@@ -21,18 +22,22 @@ import { useNavigation} from '@react-navigation/native';
       <View style={styles.root}>
       <Text style={styles.title}>Reset Your Password </Text>
 
-        <CustomInput
+      <CustomInput
+        name= "code"
         placeholder="Enter your confirmation code"
-        value={code}
-        setValue={setCode}/>
+        control={control}
+        rules={{required: "Please enter your confirmation code"}}/>
         <CustomInput
+        name = "newpassword"
         placeholder="Enter your new password"
-        value={newPassword}
-        setValue={setNewPassword}/>
+        control= {control}
+        rules={{required: 'Please enter a password',
+        minLength: {value: 8, message: "Password must be at least 8 characters long"}}}
+        />
 
         <CustomButton
         text = "Submit"
-        onPress={onSubmitPressed}/>
+        onPress={handleSubmit(onSubmitPressed)}/>
 
         <CustomButton text = "Back to Sign In" onPress={onSignInPressed} type ="TERTIARY"/>
       </View>

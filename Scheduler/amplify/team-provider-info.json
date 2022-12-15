@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-scheduler-staging-104545-authRole",
+      "UnauthRoleArn": "arn:aws:iam::738870507647:role/amplify-scheduler-staging-104545-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::738870507647:role/amplify-scheduler-staging-104545-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-scheduler-staging-104545-deployment",
+      "UnauthRoleName": "amplify-scheduler-staging-104545-unauthRole",
+      "StackName": "amplify-scheduler-staging-104545",
+      "StackId": "arn:aws:cloudformation:us-east-1:738870507647:stack/amplify-scheduler-staging-104545/26a761e0-6be5-11ed-ab60-12a8267ab70f",
+      "AmplifyAppId": "d1ls4kn54a1ttm"
+    },
+    "categories": {
+      "auth": {
+        "Scheduler": {}
+      }
+    }
+  }
+}
